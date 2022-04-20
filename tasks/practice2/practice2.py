@@ -1,6 +1,5 @@
 from cgitb import reset
 from typing import Iterable
-import random
 from unittest import result
 
 UNCULTURED_WORDS = ('kotleta', 'pirog')
@@ -30,7 +29,8 @@ def get_amount() -> float:
 
     :return: случайную сумму на счете
     """
-
+    
+    import random
     amount = float(random.randint(10000,100000000) / 100)
     return amount
 
