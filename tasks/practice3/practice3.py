@@ -109,10 +109,11 @@ def csv_reader(header: str) -> int:
     e = set()
 
     with open(get_path_to_file()) as csv_file:
-        e = set()
         file = csv.reader(csv_file, delimiter=',')
-        index = list(file)[0].index(header)
-        for x in range(1,len(list(file))):
-            e.add(a=list(file)[x][index])
+        for i, row in enumerate(file):
+            if i == 0:
+                index = row.index(header)
+            else:
+                e.add(row[index])
 
     return len(e)
